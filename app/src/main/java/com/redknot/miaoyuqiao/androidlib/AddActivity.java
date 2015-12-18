@@ -48,7 +48,29 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SqlBook sqlBook = new SqlBook(AddActivity.this);
-                Book book = new Book(10,et_book_name.getText().toString(),et_book_author.getText().toString(),et_book_introduce.getText().toString());
+
+                String name = et_book_name.getText().toString();
+                String author = et_book_author.getText().toString();
+                String introduce = et_book_introduce.getText().toString();
+
+                if(name.equals("")){
+                    Snackbar.make(v, "书名不能为空", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    return;
+                }
+                if(author.equals("")){
+                    Snackbar.make(v, "作者不能为空", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    return;
+                }
+                if(introduce.equals("")){
+                    Snackbar.make(v, "介绍不能为空", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    return;
+                }
+
+
+                Book book = new Book(10,name,author,introduce);
                 sqlBook.addBook(book);
                 finish();
             }

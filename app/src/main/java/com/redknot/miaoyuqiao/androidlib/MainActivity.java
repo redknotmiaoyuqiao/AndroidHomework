@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void create(SwipeMenu menu) {
 
-                int width = 150;
+                int width = 140;
                 SwipeMenuItem updateItem = new SwipeMenuItem(getApplicationContext());
                 updateItem.setBackground(new ColorDrawable(Color.rgb(0x03, 0xA9, 0xF4)));
                 updateItem.setWidth(dp2px(width));
